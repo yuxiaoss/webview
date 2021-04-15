@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DemoWebViewServer</title>
+</head>
+<body>
+    <a href="http://192.168.2.124:3000/">http://192.168.2.124:3000/</a>
+    <a href="http://www.baidu.com/">http://www.baidu.com/</a>
+    <a href="#" onclick="showAlert()">showAlert()</a>
+    <a href="#" onclick="showConfirm()">showConfirm()</a>
+    <a href="#" onclick="showPrompt()">showPrompt()</a>
+    <a href="android://print?msg=通过js调用android的方法">通过js调用android的方法</a>
+    <a href="#" onclick="onAndroidFunction()">onAndroidFunction</a>
+    <h1>Hello World</h1>
+    <h1>测试android缓存策略</h1>
+    <audio controls>
+        <source src="/video/test.mp3" >
+        您的浏览器不支持 audio 元素。
+    </audio>
+    <script>
+        function showAlert (msg) {
+            // alert('这是alert对话框');
+            alert(msg);
+        }
+
+        function showConfirm () {
+            var result = confirm('这是confirm对话框');
+            if (result) {
+                alert('点击了确定按钮');
+            } else {
+                alert('点击了取消按钮');
+            }
+        }
+
+        function showPrompt () {
+            var res = prompt('这是prompt对话框', '这是默认的提示内容');
+            alert(res);
+        }
+
+        function sum (x , y) {
+            var result = x + y;
+            return x + '+' + y  + ' = ' + result;
+        }
+
+        function onAndroidFunction () {
+            var result = android.print('onAndroidFunction');
+            alert(result);
+        }
+    </script>
+</body>
+</html>
